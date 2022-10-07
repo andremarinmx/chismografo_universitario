@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8"/>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        background-color: #e5e5f7;
+        opacity: 0.8;
+        background-image: radial-gradient(circle at center center, #0000, #505050), repeating-radial-gradient(circle at center center, #000000, #505050, 10px, transparent 20px, transparent 10px);
+        background-blend-mode: multiply;
+      }
+      video{
+        position: fixed;
+          right: 0;
+          left: 0;
+          bottom: 0;
+          top: 0;
+          width: 100vw;
+          height: 100vh;
+          object-fit: cover;
+          Z-index : -1;
+      }
+      .container {
+        width: 100vw;
+          height: 100vh;
+          position: relative;
+          border: 3px solid green
+      }
+      .center {
+        margin: 0;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        }
+      button {
+        background-color: #000000; /* Green */
+        border: none;
+        color: white;
+        padding: 16px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        transition-duration: 0.4s;
+        cursor: pointer;
+        border-radius: 6px;
+      }
+      .button1 {
+        background-color: white; 
+        color: black; 
+        border: 2px solid #505050;
+      }
+      .button1:hover {
+        background-color: #505050;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container" id="button">
+      <div class="center">
+        <button class="button button1">Conoce tu horóscopo</button>
+    </div>
+    </div>
+    <video autoplay muted loop playsinline hidden id="video">
+      <source src="Scremer.mp4" type="video/mp4">
+    </video>
+    <audio autoplay loop id="audio">
+      <source src="Scremer.mp3" type="audio/mpeg">
+    </audio>
+  </body>
+  <script>
+    document.addEventListener('click', scremer);
+    function scremer() {
+      document.getElementById('audio').play();
+      document.getElementById("video").hidden = false;
+      document.getElementById("button").hidden = true;
+    }
+  </script>
+</html>
